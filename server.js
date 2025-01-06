@@ -13,13 +13,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-// Root route
+// Routes
+app.use('/api/user', authRoutes);
+
+// Root Route
 app.get('/', (req, res) => {
   res.send('Welcome to the Backend!');
 });
-
-// Routes
-app.use('/api/user', authRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
